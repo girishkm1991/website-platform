@@ -1,3 +1,4 @@
+const authRoutes = require("./routes/auth.routes");
 const userRoutes = require("./routes/user.routes");
 const express = require("express");
 const cors = require("cors");
@@ -38,5 +39,6 @@ app.get("/test-db", async (req, res) => {
     }
 });
 
+app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 module.exports = app;
