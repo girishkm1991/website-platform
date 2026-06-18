@@ -1,5 +1,6 @@
 const authRoutes = require("./routes/auth.routes");
 const userRoutes = require("./routes/user.routes");
+const websiteRoutes = require("./routes/website.routes");
 const express = require("express");
 const cors = require("cors");
 const pool = require("./config/database");
@@ -39,6 +40,7 @@ app.get("/test-db", async (req, res) => {
     }
 });
 
+app.use("/websites", websiteRoutes);
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 module.exports = app;
